@@ -4,53 +4,47 @@
 
 ---
 
-## 1. Prezentare Generală și Obiective
+## 1. Prezentare Generală
 
-### 1.1. Context și Problematică
+### Context și Problematică
 Companiile de consultanță și dezvoltare software implicate în proiecte finanțate din fonduri europene gestionează proceduri administrative și financiare complexe:
 - **Reguli rigide de eligibilitate financiară:** Încadrarea pe linii bugetare distincte, separarea cheltuielilor eligibile de cele neeligibile și monitorizarea cofinanțării.
 - **Evidența strictă a resurselor umane:** Pontaj normat (fișe lunare de pontaj / timesheets), plafoane de ore pe zi și pe lună pentru fiecare expert, precum și corelarea activităților prestate cu pachetele de lucru (Work Packages) și livrabilele asumate.
 - **Pregătirea cererilor de plată și rambursare:** Agregarea documentelor justificative (facturi, state de plată, rapoarte de activitate) conform cerințelor autorităților de management.
 - **Prevenirea riscului de corecții financiare:** Reducerea erorilor umane în alocările financiare și evitarea suprapunerii orelor lucrate de experți pe proiecte multiple.
 
-### 1.2. Obiectivele Aplicației
-Sistemul își propune să ofere o soluție unificată pentru:
-1. **Gestiunea proiectelor și a consorțiilor:** Evidența apelurilor de finanțare, a proiectelor contractate, a partenerilor și a rolurilor din cadrul consorțiilor.
-2. **Planificarea operațională:** Structurarea pe pachete de lucru (Work Packages), activități, livrabile și jaloane (Milestones).
-3. **Modulul de pontaj și conformitate:** Înregistrarea orelor de lucru cu verificarea automată a constrângerilor (evitarea suprapunerilor și depășirii normei zilnice/lunare).
-4. **Monitorizare financiară și bugetară:** Alocarea pe capitole bugetare, urmărirea execuției financiare în timp real și pregătirea datelor necesare cererilor de rambursare.
-5. **Piste de audit și raportare:** Menținerea istoricului modificărilor pentru conformitate și generarea rapoartelor de sinteză.
-
 ---
 
-## 2. Etape de Implementare (Roadmap)
+## 2. Obiectivele Proiectului
 
-- [ ] **Etapa 1: Analiză, Documentație și Arhitectură**
-  - Definirea cerințelor funcționale și non-funcționale.
-  - Proiectarea modelului conceptual și logic al datelor (diagrama entitate-relație).
-  - Elaborarea specificațiilor arhitecturale și a diagramelor de modelare structurală și comportamentală (cazuri de utilizare, clase, stări).
+### 2.1. Obiectiv General
+Dezvoltarea unei soluții informatice integrate care să asigure gestiunea completă a ciclului de viață al proiectelor cu finanțare europeană, de la contractare și planificare operațională, până la execuție bugetară, monitorizarea pontajului experților și raportare financiară conformă.
 
-- [ ] **Etapa 2: Proiectarea și Implementarea Bazei de Date**
-  - Crearea structurii de tabele, chei primare, chei străine și constrângeri de integritate.
-  - Implementarea mecanismelor de validare la nivel de bază de date (proceduri și triggere pentru verificarea bugetelor și a pontajului).
-  - Popularea bazei de date cu seturi de date consistente pentru scenarii de test.
+### 2.2. Obiective Specifice
 
-- [ ] **Etapa 3: Dezvoltarea Serviciilor de Backend și Logică de Business**
-  - Implementarea mecanismelor de autentificare, autorizare și control al accesului pe roluri (RBAC).
-  - Implementarea modulelor de bază: gestiune proiecte, pachete de lucru, pontaj și bugete.
-  - Aplicarea șabloanelor de proiectare adecvate pentru decuplarea componentelor și modularitate.
+1. **Gestiunea Proiectelor și Consorțiilor**
+   - Evidența centralizată a apelurilor de finanțare, a proiectelor contractate și a entităților partenere.
+   - Definirea clară a structurii de consorțiu (rol de Lider de Proiect sau Partener) și a bugetelor alocate fiecărui partener.
+   - Urmărirea stadiului de implementare prin intermediul unui flux bine definit de stări.
 
-- [ ] **Etapa 4: Dezvoltarea Interfeței cu Utilizatorul**
-  - Implementarea fluxurilor interactive de completare și aprobare a pontajelor.
-  - Panou de control (dashboard) pentru vizualizarea indicatorilor de execuție bugetară și a stadiului livrabilelor.
-  - Formulare dedicate pentru înregistrarea cheltuielilor și întocmirea cererilor de rambursare.
+2. **Planificarea Operațională și Monitorizarea Livrabilelor**
+   - Structurarea proiectului în pachete de lucru (Work Packages - WP) și activități specifice.
+   - Definirea jaloanelor (Milestones) și a livrabilelor (Deliverables) cu termene limită și responsabili asociați.
+   - Monitorizarea gradului de îndeplinire a indicatorilor asumați prin contractul de finanțare.
 
-- [ ] **Etapa 5: Testare și Asigurarea Calității (QA)**
-  - **Testare unitară:** Verificarea funcționării izolate a metodelor de calcul (rate orare, validări de eligibilitate).
-  - **Testare de integrare:** Verificarea comunicării corecte între nivelul de date și serviciile aplicative.
-  - **Testarea constrângerilor de date:** Validarea triggerelor și scenariilor-limită (ex: încercare de suprapunere pontaj, depășire plafon bugetar).
-  - **Testare funcțională / End-to-End:** Simularea scenariilor reale parcurse de utilizatori (creare proiect, introducere pontaj expert, aprobare manager, generare raport).
+3. **Managementul Pontajului și Controlul Conformității (Timesheets)**
+   - Înregistrarea fișelor de pontaj zilnice și lunare pentru membrii echipelor de implementare, defalcate pe activități și pachete de lucru.
+   - Aplicarea automată a regulilor de conformitate: limitarea numărului maxim de ore lucrate pe zi și pe lună de către un expert.
+   - Prevenirea suprapunerii orelor alocate de un expert pe proiecte diferite în aceeași zi calendaristică.
+   - Flux de aprobare a orelor pontate de către managerul de proiect.
 
-- [ ] **Etapa 6: Documentație Finală și Livrare**
-  - Finalizarea dosarului tehnic al proiectului (specificații software, raport de proiectare a bazei de date, raport de testare).
-  - Pregătirea scenariilor demonstrative.
+4. **Monitorizare Bugetară și Gestiunea Cheltuielilor**
+   - Defalcarea bugetului pe categorii de cheltuieli (cheltuieli de personal, echipamente, servicii subcontractate, deplasări, costuri indirecte).
+   - Înregistrarea documentelor justificative (facturi, ordine de plată, state de plată) și asocierea lor cu liniile bugetare corespunzătoare.
+   - Monitorizarea în timp real a gradului de absorbție a bugetului și generarea de alerte la apropierea de depășirea plafoanelor alocate.
+   - Agregarea automată a datelor necesare întocmirii cererilor de prefinanțare, plată și rambursare.
+
+5. **Integritatea Datelor, Audit și Raportare**
+   - Menținerea unui istoric detaliat al tuturor acțiunilor critice (piste de audit) pentru verificările efectuate de autoritățile de management și auditori externi.
+   - Generarea rapoartelor de progres tehnic și a rapoartelor financiare sintetice.
+   - Asigurarea unui control riguros al accesului pe bază de roluri (administrator, manager de proiect, responsabil financiar, expert/consultant, auditor).
