@@ -1,0 +1,320 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="diag_use_case" name="Diagrama Cazurilor de Utilizare">
+    <mxGraphModel dx="1600" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1450" pageHeight="1150" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Header -->
+        <mxCell id="header_uc" value="Diagrama Cazurilor de Utilizare (Use Case Diagram) - ProiectPBD&#xa;Sistem de Management al Proiectelor cu Finanțare Europeană" style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=1;fillColor=#2b579a;strokeColor=#1e395b;fontColor=#ffffff;align=center;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="20" width="1200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- System Boundary -->
+        <mxCell id="sys_box" value="Sistem ProiectPBD (Frontiera Sistemului)" style="swimlane;whiteSpace=wrap;html=1;startSize=30;fontStyle=1;fontSize=13;fontFamily=Helvetica;align=center;verticalAlign=top;fillColor=#f8f9fa;strokeColor=#2b579a;strokeWidth=2;rounded=1;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="90" width="1000" height="1020" as="geometry" />
+        </mxCell>
+
+        <!-- Package 1: Administrare & Apeluri -->
+        <mxCell id="pkg_apeluri" value="Pachet 1: Gestiune Apeluri &amp; Administrare" style="swimlane;whiteSpace=wrap;html=1;startSize=26;fontStyle=1;fontSize=11;fontFamily=Helvetica;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;strokeWidth=1;collapsible=0;rounded=1;" vertex="1" parent="sys_box">
+          <mxGeometry x="30" y="45" width="450" height="235" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_adm_apel" value="Gestionează apeluri de proiecte&#xa;(buget, termene, cofinanțare)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_apeluri">
+          <mxGeometry x="110" y="35" width="230" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_adm_usr" value="Gestionează conturi utilizatori&#xa;și organizații partenere" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_apeluri">
+          <mxGeometry x="110" y="100" width="230" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_sol_apel" value="Consultă apeluri active&#xa;și ghidul solicitantului" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_apeluri">
+          <mxGeometry x="110" y="165" width="230" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- Package 2: Elaborare & Depunere Proiect -->
+        <mxCell id="pkg_elaborare" value="Pachet 2: Elaborare &amp; Depunere Proiect" style="swimlane;whiteSpace=wrap;html=1;startSize=26;fontStyle=1;fontSize=11;fontFamily=Helvetica;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;strokeWidth=1;collapsible=0;rounded=1;" vertex="1" parent="sys_box">
+          <mxGeometry x="510" y="45" width="460" height="425" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_cr_draft" value="Creează proiect nou (Draft)&#xa;(acronim, durată, valoare)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_elaborare">
+          <mxGeometry x="120" y="35" width="220" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_cfg_cons" value="Configurează consorțiu&#xa;(adaugă parteneri proiect)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_elaborare">
+          <mxGeometry x="120" y="95" width="220" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_cpl_bug" value="Definește linii bugetare&#xa;(personal, echipamente, regie)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_elaborare">
+          <mxGeometry x="120" y="155" width="220" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_plan_act" value="Planifică activități și livrabile&#xa;(date, jaloane, asocieri)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_elaborare">
+          <mxGeometry x="120" y="215" width="220" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_dep_prj" value="Depune proiect oficial&#xa;(trecere în starea 'Depus')" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;fontStyle=1;" vertex="1" parent="pkg_elaborare">
+          <mxGeometry x="120" y="280" width="220" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_val_plaf" value="Validează plafoane bugetare&#xa;și eligibilitate apel" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_elaborare">
+          <mxGeometry x="120" y="360" width="220" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Include Depune -> Valideaza -->
+        <mxCell id="inc_dep_val" edge="1" parent="pkg_elaborare" source="uc_dep_prj" target="uc_val_plaf" style="endArrow=open;html=1;rounded=0;dashed=1;strokeColor=#000000;strokeWidth=1.5;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_inc_dep" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#4d4d4d;fontStyle=2;" vertex="1" parent="pkg_elaborare">
+          <mxGeometry x="235" y="330" width="70" height="20" as="geometry" />
+        </mxCell>
+
+
+        <!-- Package 3: Evaluare & Contractare -->
+        <mxCell id="pkg_evaluare" value="Pachet 3: Evaluare &amp; Contractare" style="swimlane;whiteSpace=wrap;html=1;startSize=26;fontStyle=1;fontSize=11;fontFamily=Helvetica;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;strokeWidth=1;collapsible=0;rounded=1;" vertex="1" parent="sys_box">
+          <mxGeometry x="510" y="490" width="460" height="505" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_aloc_eval" value="Alocă proiecte către evaluatori&#xa;(distribuire dosare)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_evaluare">
+          <mxGeometry x="120" y="35" width="220" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_eval_crit" value="Completează fișă evaluare&#xa;(punctaj criterii administrative &amp; tehnice)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;fontStyle=1;" vertex="1" parent="pkg_evaluare">
+          <mxGeometry x="105" y="110" width="250" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_sol_clar" value="Solicită clarificări&#xa;(întrebări administrative)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_evaluare">
+          <mxGeometry x="250" y="200" width="180" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_rasp_clar" value="Transmite răspuns la clarificări&#xa;(completare documente)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_evaluare">
+          <mxGeometry x="240" y="280" width="200" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_decizie_eval" value="Emite decizie evaluare&#xa;('Admis' / 'Respins' / prag 70p)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_evaluare">
+          <mxGeometry x="50" y="350" width="220" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_inch_ctr" value="Încheie contract de finanțare&#xa;(trecere în starea 'Contractat')" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;fontStyle=1;" vertex="1" parent="pkg_evaluare">
+          <mxGeometry x="115" y="435" width="230" height="45" as="geometry" />
+        </mxCell>
+
+        <!-- Extend Clarificari -> Evaluare -->
+        <mxCell id="ext_clar_eval" edge="1" parent="pkg_evaluare" source="uc_sol_clar" target="uc_eval_crit" style="endArrow=open;html=1;rounded=0;dashed=1;strokeColor=#000000;strokeWidth=1.5;exitX=0.5;exitY=0;entryX=0.7;entryY=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_ext_clar" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#4d4d4d;fontStyle=2;" vertex="1" parent="pkg_evaluare">
+          <mxGeometry x="280" y="170" width="70" height="20" as="geometry" />
+        </mxCell>
+
+
+        <!-- Package 4: Implementare & Rambursare -->
+        <mxCell id="pkg_implementare" value="Pachet 4: Implementare &amp; Cereri de Rambursare" style="swimlane;whiteSpace=wrap;html=1;startSize=26;fontStyle=1;fontSize=11;fontFamily=Helvetica;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;strokeWidth=1;collapsible=0;rounded=1;" vertex="1" parent="sys_box">
+          <mxGeometry x="30" y="300" width="450" height="695" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_rap_prog" value="Actualizează progres activitate&#xa;(procent realizat 0-100%)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_implementare">
+          <mxGeometry x="105" y="35" width="240" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_inc_liv" value="Încarcă livrabil tehnic&#xa;(stare 'In_Lucru' -&gt; 'Livrat')" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_implementare">
+          <mxGeometry x="105" y="100" width="240" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_cr_cr" value="Creează cerere de rambursare (CR)&#xa;(număr cerere, sumă solicitată)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;fontStyle=1;" vertex="1" parent="pkg_implementare">
+          <mxGeometry x="100" y="170" width="250" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_at_doc" value="Atașează documente justificative&#xa;(facturi, OP, state salarii, audit)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_implementare">
+          <mxGeometry x="30" y="260" width="200" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_asoc_liv" value="Asociază livrabile realizate la CR&#xa;(justificare tehnică a cheltuielilor)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_implementare">
+          <mxGeometry x="240" y="260" width="200" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_verif_cr" value="Verifică cerere și documente&#xa;(eligibilitate, starea 'In_Verificare')" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;fontStyle=1;" vertex="1" parent="pkg_implementare">
+          <mxGeometry x="100" y="350" width="250" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_deduceri" value="Aplică deduceri / corecții&#xa;(ajustare sumă neeligibilă)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_implementare">
+          <mxGeometry x="250" y="435" width="180" height="45" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_aut_plata" value="Autorizează plata cererii&#xa;(stare 'Aprobata', sumă aprobată)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;fontStyle=1;" vertex="1" parent="pkg_implementare">
+          <mxGeometry x="100" y="515" width="250" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_inchide_prj" value="Validează finalizarea proiectului&#xa;(trecere în starea 'Finalizat')" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#000000;fontSize=11;" vertex="1" parent="pkg_implementare">
+          <mxGeometry x="100" y="605" width="250" height="48" as="geometry" />
+        </mxCell>
+
+        <!-- Include CR -> Documente -->
+        <mxCell id="inc_cr_doc" edge="1" parent="pkg_implementare" source="uc_cr_cr" target="uc_at_doc" style="endArrow=open;html=1;rounded=0;dashed=1;strokeColor=#000000;strokeWidth=1.5;exitX=0.3;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_inc_doc" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#4d4d4d;fontStyle=2;" vertex="1" parent="pkg_implementare">
+          <mxGeometry x="70" y="225" width="70" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Include CR -> Livrabile -->
+        <mxCell id="inc_cr_liv" edge="1" parent="pkg_implementare" source="uc_cr_cr" target="uc_asoc_liv" style="endArrow=open;html=1;rounded=0;dashed=1;strokeColor=#000000;strokeWidth=1.5;exitX=0.7;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_inc_liv" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#4d4d4d;fontStyle=2;" vertex="1" parent="pkg_implementare">
+          <mxGeometry x="270" y="225" width="70" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Extend Verificare -> Deduceri -->
+        <mxCell id="ext_ver_ded" edge="1" parent="pkg_implementare" source="uc_deduceri" target="uc_verif_cr" style="endArrow=open;html=1;rounded=0;dashed=1;strokeColor=#000000;strokeWidth=1.5;exitX=0.5;exitY=0;entryX=0.75;entryY=1;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_ext_ded" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#4d4d4d;fontStyle=2;" vertex="1" parent="pkg_implementare">
+          <mxGeometry x="260" y="405" width="70" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Dep Verificare -> Plata -->
+        <mxCell id="dep_ver_aut" edge="1" parent="pkg_implementare" source="uc_verif_cr" target="uc_aut_plata" style="endArrow=open;html=1;rounded=0;dashed=1;strokeColor=#000000;strokeWidth=1.5;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_dep_aut" value="&amp;lt;&amp;lt;precede&amp;gt;&amp;gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#4d4d4d;fontStyle=2;" vertex="1" parent="pkg_implementare">
+          <mxGeometry x="140" y="445" width="70" height="20" as="geometry" />
+        </mxCell>
+
+
+        <!-- ACTORS -->
+        <!-- Actor 1: Administrator (Left Top) -->
+        <mxCell id="act_admin" value="Administrator Sistem" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=1.5;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="60" y="160" width="45" height="85" as="geometry" />
+        </mxCell>
+
+        <!-- Actor 2: Ofiter AM (Left Bottom) -->
+        <mxCell id="act_ofiter" value="Ofițer AM&#xa;(Autoritate Management)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1.5;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="680" width="45" height="85" as="geometry" />
+        </mxCell>
+
+        <!-- Actor 3: Solicitant / Beneficiar (Right Top) -->
+        <mxCell id="act_solicitant" value="Solicitant /&#xa;Lider Parteneriat" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1.5;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="240" width="45" height="85" as="geometry" />
+        </mxCell>
+
+        <!-- Actor 4: Evaluator (Right Bottom) -->
+        <mxCell id="act_evaluator" value="Evaluator Independent" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=1.5;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="680" width="45" height="85" as="geometry" />
+        </mxCell>
+
+
+        <!-- ACTOR CONNECTIONS -->
+        <!-- Admin Connections -->
+        <mxCell id="rel_adm_apel" edge="1" parent="1" source="act_admin" target="uc_adm_apel" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_adm_usr" edge="1" parent="1" source="act_admin" target="uc_adm_usr" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Solicitant Connections -->
+        <mxCell id="rel_sol_apel" edge="1" parent="1" source="act_solicitant" target="uc_sol_apel" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1240" y="260" />
+              <mxPoint x="700" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_sol_draft" edge="1" parent="1" source="act_solicitant" target="uc_cr_draft" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_sol_cons" edge="1" parent="1" source="act_solicitant" target="uc_cfg_cons" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_sol_bug" edge="1" parent="1" source="act_solicitant" target="uc_cpl_bug" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_sol_act" edge="1" parent="1" source="act_solicitant" target="uc_plan_act" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_sol_dep" edge="1" parent="1" source="act_solicitant" target="uc_dep_prj" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_sol_rasp" edge="1" parent="1" source="act_solicitant" target="uc_rasp_clar" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_sol_inch_ctr" edge="1" parent="1" source="act_solicitant" target="uc_inch_ctr" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1270" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_sol_prog" edge="1" parent="1" source="act_solicitant" target="uc_rap_prog" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1250" y="360" />
+              <mxPoint x="600" y="360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_sol_inc_liv" edge="1" parent="1" source="act_solicitant" target="uc_inc_liv" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1250" y="420" />
+              <mxPoint x="600" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_sol_cr_cr" edge="1" parent="1" source="act_solicitant" target="uc_cr_cr" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;entryX=1;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1260" y="490" />
+              <mxPoint x="600" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Evaluator Connections -->
+        <mxCell id="rel_eval_crit" edge="1" parent="1" source="act_evaluator" target="uc_eval_crit" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_eval_clar" edge="1" parent="1" source="act_evaluator" target="uc_sol_clar" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_eval_dec" edge="1" parent="1" source="act_evaluator" target="uc_decizie_eval" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Ofiter AM Connections -->
+        <mxCell id="rel_of_aloc" edge="1" parent="1" source="act_ofiter" target="uc_aloc_eval" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="550" />
+              <mxPoint x="600" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_of_ctr" edge="1" parent="1" source="act_ofiter" target="uc_inch_ctr" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="700" />
+              <mxPoint x="600" y="700" />
+              <mxPoint x="600" y="940" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_of_ver_cr" edge="1" parent="1" source="act_ofiter" target="uc_verif_cr" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_of_ded" edge="1" parent="1" source="act_ofiter" target="uc_deduceri" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_of_aut_plata" edge="1" parent="1" source="act_ofiter" target="uc_aut_plata" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_of_inch_prj" edge="1" parent="1" source="act_ofiter" target="uc_inchide_prj" style="endArrow=none;html=1;strokeColor=#333333;strokeWidth=1.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
